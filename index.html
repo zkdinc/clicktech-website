@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نقر ذكي – Auto Clicker Jordan</title>
+  <title>نقر ذكي – Click Tech</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -11,6 +11,8 @@
       -webkit-text-size-adjust: 100%;
       scroll-behavior: smooth;
     }
+
+    :root { --card-px: clamp(14px, 4vw, 20px); }
 
     body {
       background: #080e1f;
@@ -59,11 +61,12 @@
       background: linear-gradient(145deg, #0d1b3e 0%, #112240 100%);
       border: 1px solid #1e3a5f;
       border-radius: 16px;
-      padding: clamp(16px, 4.5vw, 22px) clamp(14px, 4vw, 20px);
+      padding: clamp(16px, 4.5vw, 22px) var(--card-px);
       margin-bottom: 16px;
       display: flex;
       flex-direction: column;
       gap: 14px;
+      overflow: hidden;
     }
 
     .step-header {
@@ -107,13 +110,13 @@
       word-break: break-word;
     }
 
-    /* ── Step image ── */
+    /* ── Step image — breaks out of card padding to go full-bleed ── */
     .step-img {
-      width: 100%;
+      width: calc(100% + 2 * var(--card-px));
+      margin-inline: calc(-1 * var(--card-px));
+      margin-bottom: calc(-1 * clamp(16px, 4.5vw, 22px));
       height: auto;
-      border-radius: 12px;
       display: block;
-      border: 1px solid #1e3a5f;
     }
 
     /* ── Download link inside step 2 ── */
@@ -229,7 +232,7 @@
 
     <!-- Banner -->
     <div class="banner">
-      <img src="banner.png" alt="نقر ذكي – Auto Clicker Jordan" />
+      <img src="banner.png" alt="نقر ذكي – Click Tech" />
     </div>
 
     <div class="content">
